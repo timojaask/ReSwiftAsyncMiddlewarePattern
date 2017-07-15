@@ -11,7 +11,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let debugStoreSubscriber = DebugStoreSubscriber()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let middleware = sideEffectsMiddleware(dataService: RemoteDataService())
+        let middleware = sideEffectsMiddleware(
+            dataService: RemoteDataService(),
+            dataServiceSideEffects: dataServiceSideEffects
+        )
         store = Store<AppState>(reducer: appReducer, state: nil, middleware: [middleware])
         store.subscribe(debugStoreSubscriber)
 
