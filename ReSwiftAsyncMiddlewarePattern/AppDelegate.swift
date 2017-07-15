@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let middleware = sideEffectsMiddleware(sideEffects: sideEffects)
         store = Store<AppState>(reducer: appReducer, state: nil, middleware: [middleware])
         store.subscribe(debugStoreSubscriber)
-        store.dispatch(SetCreatePost(state: .request(post: Post(title: "New Post", body: "Body of the new post"))))
-        store.dispatch(SetFetchPosts(state: .request))
 
+        testPostingAndFetchingStuff()
         return true
+    }
+
+    func testPostingAndFetchingStuff() {
+        let testPost = Post(title: "New Post", body: "Body of the new post")
+        store.dispatch(SetCreatePost(state: .request(post: testPost)))
+        store.dispatch(SetFetchPosts(state: .request))
     }
 }
 
