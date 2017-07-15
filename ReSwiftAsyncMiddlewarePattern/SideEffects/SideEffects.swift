@@ -2,19 +2,17 @@ import ReSwift
 
 typealias SideEffect = (Action, @escaping DispatchFunction) -> ()
 
-func instantiateSideEffects(dataService: DataService) -> [SideEffect] {
-    return [
-        fetchUsers(dataService: dataService),
-        fetchPosts(dataService: dataService),
-        createPost(dataService: dataService),
-    ]
-}
+let dataServiceSideEffects = [
+    fetchUsers,
+    fetchPosts,
+    createPost
+]
 
-func sideEffectsMiddleware(sideEffects: [SideEffect]) -> Middleware<Any> {
+func sideEffectsMiddleware(dataService: DataService) -> Middleware<Any> {
     return { dispatch, getState in
         return { next in
             return { action in
-                sideEffects.forEach { $0(action, dispatch) }
+                dataServiceSideEffects.forEach { $0(dataService)(action, dispatch) }
                 return next(action)
             }
         }
