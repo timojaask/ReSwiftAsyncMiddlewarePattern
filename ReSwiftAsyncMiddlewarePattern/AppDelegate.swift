@@ -1,6 +1,5 @@
 import UIKit
 import ReSwift
-import PromiseKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
