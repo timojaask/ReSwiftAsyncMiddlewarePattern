@@ -1,6 +1,6 @@
 import ReSwift
 
-let createPost = { (dataService: DataService) in
+func createPost(dataService: DataService) -> SideEffect {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
         guard let action = action as? SetCreatePost,
             case .request(let post) = action.state else { return }

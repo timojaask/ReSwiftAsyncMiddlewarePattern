@@ -1,6 +1,6 @@
 import ReSwift
 
-let fetchUsers = { (dataService: DataService) in
+func fetchUsers(dataService: DataService) -> SideEffect {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
         guard let action = action as? SetFetchUsers,
             case .request = action.state else { return }

@@ -1,6 +1,6 @@
 import ReSwift
 
-let fetchPosts = { (dataService: DataService) in
+func fetchPosts(dataService: DataService) -> SideEffect {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
         guard let action = action as? SetFetchPosts,
             case .request = action.state else { return }

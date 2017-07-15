@@ -4,9 +4,9 @@ typealias SideEffect = (Action, @escaping DispatchFunction) -> ()
 
 func instantiateSideEffects(dataService: DataService) -> [SideEffect] {
     return [
-        fetchUsers(dataService),
-        fetchPosts(dataService),
-        createPost(dataService),
+        fetchUsers(dataService: dataService),
+        fetchPosts(dataService: dataService),
+        createPost(dataService: dataService),
     ]
 }
 
