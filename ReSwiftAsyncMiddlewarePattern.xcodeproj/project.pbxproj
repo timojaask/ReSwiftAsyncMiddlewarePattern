@@ -29,6 +29,22 @@
 		2FC99F251F1CDE71002BCC98 /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */; };
 		2FC99F261F1CDE71002BCC98 /* InjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F231F1CDE71002BCC98 /* InjectService.swift */; };
 		2FC99F271F1CDE71002BCC98 /* MiddlewareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */; };
+		2FC99F281F1CEEFA002BCC98 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B11F1A44B3009B051E /* AppState.swift */; };
+		2FC99F291F1CEEFE002BCC98 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444AD1F1A4495009B051E /* Actions.swift */; };
+		2FC99F2A1F1CEF00002BCC98 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444AF1F1A44A5009B051E /* AppReducer.swift */; };
+		2FC99F2B1F1CEF03002BCC98 /* UsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BD1F1A89F2009B051E /* UsersReducer.swift */; };
+		2FC99F2C1F1CEF05002BCC98 /* PostsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BF1F1A8A0C009B051E /* PostsReducer.swift */; };
+		2FC99F2D1F1CEF08002BCC98 /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C31F1A8AD2009B051E /* SideEffects.swift */; };
+		2FC99F2E1F1CEF0A002BCC98 /* FetchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C51F1A8B18009B051E /* FetchUsers.swift */; };
+		2FC99F2F1F1CEF0C002BCC98 /* FetchPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C71F1A8FA5009B051E /* FetchPosts.swift */; };
+		2FC99F301F1CEF0E002BCC98 /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C91F1A9052009B051E /* CreatePost.swift */; };
+		2FC99F311F1CEF12002BCC98 /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */; };
+		2FC99F321F1CEF15002BCC98 /* InjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F231F1CDE71002BCC98 /* InjectService.swift */; };
+		2FC99F331F1CEF18002BCC98 /* MiddlewareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */; };
+		2FC99F341F1CEF1C002BCC98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B91F1A45CC009B051E /* User.swift */; };
+		2FC99F351F1CEF1E002BCC98 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BB1F1A45F1009B051E /* Post.swift */; };
+		2FC99F361F1CEF21002BCC98 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B31F1A44C2009B051E /* DataService.swift */; };
+		2FC99F371F1CEF25002BCC98 /* RemoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444CC1F1A971A009B051E /* RemoteDataService.swift */; };
 		4477C38973D03A8FA02FEAFC /* Pods_ReSwiftAsyncMiddlewarePattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5790D2E9D0185E8E0E5046EC /* Pods_ReSwiftAsyncMiddlewarePattern.framework */; };
 		50EA6B2B8CF1C9414606F766 /* Pods_ReSwiftAsyncMiddlewarePatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204407718DD5BFB38DF3686B /* Pods_ReSwiftAsyncMiddlewarePatternTests.framework */; };
 /* End PBXBuildFile section */
@@ -461,7 +477,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC99F291F1CEEFE002BCC98 /* Actions.swift in Sources */,
+				2FC99F311F1CEF12002BCC98 /* CreateMiddleware.swift in Sources */,
 				2FC444A31F1A438A009B051E /* ReSwiftAsyncMiddlewarePatternTests.swift in Sources */,
+				2FC99F2D1F1CEF08002BCC98 /* SideEffects.swift in Sources */,
+				2FC99F301F1CEF0E002BCC98 /* CreatePost.swift in Sources */,
+				2FC99F2F1F1CEF0C002BCC98 /* FetchPosts.swift in Sources */,
+				2FC99F341F1CEF1C002BCC98 /* User.swift in Sources */,
+				2FC99F361F1CEF21002BCC98 /* DataService.swift in Sources */,
+				2FC99F2A1F1CEF00002BCC98 /* AppReducer.swift in Sources */,
+				2FC99F331F1CEF18002BCC98 /* MiddlewareItem.swift in Sources */,
+				2FC99F351F1CEF1E002BCC98 /* Post.swift in Sources */,
+				2FC99F281F1CEEFA002BCC98 /* AppState.swift in Sources */,
+				2FC99F321F1CEF15002BCC98 /* InjectService.swift in Sources */,
+				2FC99F371F1CEF25002BCC98 /* RemoteDataService.swift in Sources */,
+				2FC99F2C1F1CEF05002BCC98 /* PostsReducer.swift in Sources */,
+				2FC99F2B1F1CEF03002BCC98 /* UsersReducer.swift in Sources */,
+				2FC99F2E1F1CEF0A002BCC98 /* FetchUsers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
