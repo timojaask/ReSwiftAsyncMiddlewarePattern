@@ -5,8 +5,6 @@ func asyncRequestsReducer(action: Action, state: AsyncRequests?) -> AsyncRequest
     switch action {
     case let action as SetFetchPosts:
         state.fetchPosts = action.state
-    case let action as SetFetchUsers:
-        state.fetchUsers = action.state
     case let action as SetCreatePost:
         state.createPost = action.state
     default:

@@ -1,7 +1,6 @@
 import ReSwift
 
 struct AsyncRequests: StateType {
-    var fetchUsers = FetchUsers.none
     var fetchPosts = FetchPosts.none
     var createPost = CreatePost.none
 }
