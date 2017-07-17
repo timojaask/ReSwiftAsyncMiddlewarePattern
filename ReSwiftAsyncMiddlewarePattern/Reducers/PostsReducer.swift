@@ -1,11 +1,11 @@
 import ReSwift
 
-func postsReducer(action: Action, state: AppState?) -> [Post] {
-    let state = state ?? AppState()
+func postsReducer(action: Action, state: [Post]?) -> [Post] {
+    let state = state ?? []
 
     guard let action = action as? FetchPosts,
         case .success(let fetchedPosts) = action else {
-            return state.posts
+            return state
     }
 
     print("postsReducer reducer")
