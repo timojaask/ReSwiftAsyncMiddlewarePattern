@@ -26,8 +26,9 @@
 		2FC444CD1F1A971A009B051E /* RemoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444CC1F1A971A009B051E /* RemoteDataService.swift */; };
 		2FC444D11F1AA211009B051E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC444CF1F1AA211009B051E /* LaunchScreen.storyboard */; };
 		2FC444D21F1AA211009B051E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC444D01F1AA211009B051E /* Main.storyboard */; };
-		2FC444D41F1AA804009B051E /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444D31F1AA804009B051E /* CreateMiddleware.swift */; };
-		2FC444D61F1AAD70009B051E /* ServiceInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444D51F1AAD70009B051E /* ServiceInjector.swift */; };
+		2FC99F251F1CDE71002BCC98 /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */; };
+		2FC99F261F1CDE71002BCC98 /* InjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F231F1CDE71002BCC98 /* InjectService.swift */; };
+		2FC99F271F1CDE71002BCC98 /* MiddlewareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */; };
 		4477C38973D03A8FA02FEAFC /* Pods_ReSwiftAsyncMiddlewarePattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5790D2E9D0185E8E0E5046EC /* Pods_ReSwiftAsyncMiddlewarePattern.framework */; };
 		50EA6B2B8CF1C9414606F766 /* Pods_ReSwiftAsyncMiddlewarePatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204407718DD5BFB38DF3686B /* Pods_ReSwiftAsyncMiddlewarePatternTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,8 +68,9 @@
 		2FC444CC1F1A971A009B051E /* RemoteDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataService.swift; sourceTree = "<group>"; };
 		2FC444CF1F1AA211009B051E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FC444D01F1AA211009B051E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2FC444D31F1AA804009B051E /* CreateMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMiddleware.swift; sourceTree = "<group>"; };
-		2FC444D51F1AAD70009B051E /* ServiceInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceInjector.swift; sourceTree = "<group>"; };
+		2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMiddleware.swift; sourceTree = "<group>"; };
+		2FC99F231F1CDE71002BCC98 /* InjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectService.swift; sourceTree = "<group>"; };
+		2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddlewareItem.swift; sourceTree = "<group>"; };
 		39ACB2CE797BE8210B6FA831 /* Pods-ReSwiftAsyncMiddlewarePatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftAsyncMiddlewarePatternTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftAsyncMiddlewarePatternTests/Pods-ReSwiftAsyncMiddlewarePatternTests.debug.xcconfig"; sourceTree = "<group>"; };
 		446B0A90EBEA0E12CF6F73B0 /* Pods-ReSwiftAsyncMiddlewarePattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftAsyncMiddlewarePattern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftAsyncMiddlewarePattern/Pods-ReSwiftAsyncMiddlewarePattern.debug.xcconfig"; sourceTree = "<group>"; };
 		5790D2E9D0185E8E0E5046EC /* Pods_ReSwiftAsyncMiddlewarePattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftAsyncMiddlewarePattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				2FC444B51F1A456C009B051E /* Actions */,
 				2FC444B61F1A4579009B051E /* Reducers */,
 				2FC444B71F1A457F009B051E /* SideEffects */,
+				2FC99F211F1CDD61002BCC98 /* Middleware */,
 				2FC444B81F1A45C4009B051E /* Model */,
 				2FC444CB1F1A96F2009B051E /* Services */,
 				2FC444CE1F1AA125009B051E /* View */,
@@ -178,8 +181,6 @@
 				2FC444C51F1A8B18009B051E /* FetchUsers.swift */,
 				2FC444C71F1A8FA5009B051E /* FetchPosts.swift */,
 				2FC444C91F1A9052009B051E /* CreatePost.swift */,
-				2FC444D51F1AAD70009B051E /* ServiceInjector.swift */,
-				2FC444D31F1AA804009B051E /* CreateMiddleware.swift */,
 			);
 			path = SideEffects;
 			sourceTree = "<group>";
@@ -210,6 +211,16 @@
 				2FC4448F1F1A438A009B051E /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2FC99F211F1CDD61002BCC98 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */,
+				2FC99F231F1CDE71002BCC98 /* InjectService.swift */,
+				2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 		5C546DEE60EB2215975F4D48 /* Frameworks */ = {
@@ -427,10 +438,12 @@
 			files = (
 				2FC444AE1F1A4495009B051E /* Actions.swift in Sources */,
 				2FC444901F1A438A009B051E /* ViewController.swift in Sources */,
+				2FC99F261F1CDE71002BCC98 /* InjectService.swift in Sources */,
 				2FC444C01F1A8A0C009B051E /* PostsReducer.swift in Sources */,
+				2FC99F251F1CDE71002BCC98 /* CreateMiddleware.swift in Sources */,
 				2FC444CA1F1A9052009B051E /* CreatePost.swift in Sources */,
+				2FC99F271F1CDE71002BCC98 /* MiddlewareItem.swift in Sources */,
 				2FC444B01F1A44A5009B051E /* AppReducer.swift in Sources */,
-				2FC444D61F1AAD70009B051E /* ServiceInjector.swift in Sources */,
 				2FC444BC1F1A45F1009B051E /* Post.swift in Sources */,
 				2FC444BE1F1A89F2009B051E /* UsersReducer.swift in Sources */,
 				2FC444C81F1A8FA5009B051E /* FetchPosts.swift in Sources */,
@@ -439,7 +452,6 @@
 				2FC444B21F1A44B3009B051E /* AppState.swift in Sources */,
 				2FC444C41F1A8AD2009B051E /* SideEffects.swift in Sources */,
 				2FC444C61F1A8B18009B051E /* FetchUsers.swift in Sources */,
-				2FC444D41F1AA804009B051E /* CreateMiddleware.swift in Sources */,
 				2FC4448E1F1A438A009B051E /* AppDelegate.swift in Sources */,
 				2FC444BA1F1A45CC009B051E /* User.swift in Sources */,
 			);

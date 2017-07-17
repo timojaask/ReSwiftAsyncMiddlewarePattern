@@ -1,7 +1,5 @@
 import ReSwift
 
-typealias MiddlewareItem = (Action, @escaping DispatchFunction) -> ()
-
 func createMiddleware(items: [MiddlewareItem]) -> Middleware<Any> {
     return { dispatch, getState in
         return { next in
