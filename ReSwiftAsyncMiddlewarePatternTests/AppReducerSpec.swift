@@ -4,28 +4,28 @@ import Nimble
 class AppReducerSpec: QuickSpec {
 
     override func spec() {
-        describe("Users") {
+        describe("Reducer") {
 
-            it("Sets users array when FetchUsers.success action is called") {
-                let users = randomUsers()
-                let initial = AppState()
-                let action = FetchUsers.success(users: users)
+            it("Sets users array when FetchUsers.success action is called, keeping other state unchanged") {
+                let newUsers = randomUsers()
+                let fetchUsersSuccessAction = FetchUsers.success(users: newUsers)
 
-                let expected = AppState(users: users, posts: [])
-                let actual = appReducer(action: action, state: initial)
+                let initialState = randomAppState()
+                let expectedState = AppState(users: newUsers, posts: initialState.posts)
+                let actualState = appReducer(action: fetchUsersSuccessAction, state: initialState)
 
-                expect(actual).to(equal(expected))
+                expect(actualState).to(equal(expectedState))
             }
 
-            it("Sets posts array when FetchPosts.success action is called") {
-                let posts = randomPosts()
-                let initial = AppState()
-                let action = FetchPosts.success(posts: posts)
+            it("Sets posts array when FetchPosts.success action is called, keeping other state unchanged") {
+                let newPosts = randomPosts()
+                let fetchPostsSuccessAction = FetchPosts.success(posts: newPosts)
 
-                let expected = AppState(users: [], posts: posts)
-                let actual = appReducer(action: action, state: initial)
+                let initialState = randomAppState()
+                let expectedState = AppState(users: initialState.users, posts: newPosts)
+                let actualState = appReducer(action: fetchPostsSuccessAction, state: initialState)
 
-                expect(actual).to(equal(expected))
+                expect(actualState).to(equal(expectedState))
             }
         }
     }

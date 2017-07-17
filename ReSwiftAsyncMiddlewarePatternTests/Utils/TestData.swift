@@ -9,3 +9,7 @@ func randomPosts(_ number: Int = 4) -> [Post] {
         Post(title: String.random(length: 5), body: String.random(length: 5))
     }
 }
+
+func randomAppState() -> AppState {
+    return AppState(users: randomUsers(), posts: randomPosts())
+}
