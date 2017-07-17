@@ -1,7 +1,7 @@
 import Quick
 import Nimble
 
-class UserReducerSpec: QuickSpec {
+class UsersReducerSpec: QuickSpec {
 
     override func spec() {
         describe("Users reducer") {
