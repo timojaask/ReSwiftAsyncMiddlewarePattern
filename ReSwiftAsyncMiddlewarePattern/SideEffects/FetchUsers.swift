@@ -2,12 +2,13 @@ import ReSwift
 
 func fetchUsers(dataService: DataService) -> MiddlewareItem {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
-        guard action is FetchUsersRequest else { return }
+        guard let action = action as? FetchUsers,
+            case .request = action else { return }
 
         print("fetchUsers side effect")
 
         dataService.fetchUsers()
-            .then { dispatch(FetchUsersSuccess(users: $0)) }
-            .catch { dispatch(FetchUsersFailure(error: $0)) }
+            .then { dispatch(FetchUsers.success(users: $0)) }
+            .catch { dispatch(FetchUsers.failure(error: $0)) }
     }
 }

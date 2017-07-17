@@ -1,8 +1,10 @@
 import ReSwift
 
-struct FetchUsersRequest: Action { }
-struct FetchUsersSuccess: Action { let users: [User] }
-struct FetchUsersFailure: Action { let error: Error }
+enum FetchUsers: Action {
+    case request
+    case success(users: [User])
+    case failure(error: Error)
+}
 
 enum FetchPosts: Action {
     case request
