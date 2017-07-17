@@ -4,7 +4,7 @@ import Nimble
 class UserReducerSpec: QuickSpec {
 
     override func spec() {
-        describe("User reducer") {
+        describe("Users reducer") {
 
             it("Instantiates AppState when passed state is nil") {
                 let initialState: [User]? = nil
