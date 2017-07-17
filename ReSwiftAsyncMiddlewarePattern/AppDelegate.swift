@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func testPostingAndFetchingStuff() {
 //        store.dispatch(FetchUsersRequest())
-//        let testPost = Post(title: "New Post", body: "Body of the new post")
-//        store.dispatch(SetCreatePost(state: .request(post: testPost)))
+        let testPost = Post(title: "New Post", body: "Body of the new post")
+//        store.dispatch(FetchPosts.request)
+        store.dispatch(CreatePost.request(post: testPost))
         store.dispatch(FetchPosts.request)
     }
 }
@@ -32,6 +33,5 @@ class DebugStoreSubscriber: StoreSubscriber {
         print("State changed")
         print(" -- posts: \(state.posts)")
         print(" -- users: \(state.users)")
-        print(" -- createPost: \(state.asyncRequests.createPost)")
     }
 }

@@ -19,7 +19,6 @@
 		2FC444BC1F1A45F1009B051E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BB1F1A45F1009B051E /* Post.swift */; };
 		2FC444BE1F1A89F2009B051E /* UsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BD1F1A89F2009B051E /* UsersReducer.swift */; };
 		2FC444C01F1A8A0C009B051E /* PostsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BF1F1A8A0C009B051E /* PostsReducer.swift */; };
-		2FC444C21F1A8A2D009B051E /* AsyncRequestsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C11F1A8A2D009B051E /* AsyncRequestsReducer.swift */; };
 		2FC444C41F1A8AD2009B051E /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C31F1A8AD2009B051E /* SideEffects.swift */; };
 		2FC444C61F1A8B18009B051E /* FetchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C51F1A8B18009B051E /* FetchUsers.swift */; };
 		2FC444C81F1A8FA5009B051E /* FetchPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C71F1A8FA5009B051E /* FetchPosts.swift */; };
@@ -61,7 +60,6 @@
 		2FC444BB1F1A45F1009B051E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2FC444BD1F1A89F2009B051E /* UsersReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersReducer.swift; sourceTree = "<group>"; };
 		2FC444BF1F1A8A0C009B051E /* PostsReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsReducer.swift; sourceTree = "<group>"; };
-		2FC444C11F1A8A2D009B051E /* AsyncRequestsReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestsReducer.swift; sourceTree = "<group>"; };
 		2FC444C31F1A8AD2009B051E /* SideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideEffects.swift; sourceTree = "<group>"; };
 		2FC444C51F1A8B18009B051E /* FetchUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUsers.swift; sourceTree = "<group>"; };
 		2FC444C71F1A8FA5009B051E /* FetchPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchPosts.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				2FC444AF1F1A44A5009B051E /* AppReducer.swift */,
 				2FC444BD1F1A89F2009B051E /* UsersReducer.swift */,
 				2FC444BF1F1A8A0C009B051E /* PostsReducer.swift */,
-				2FC444C11F1A8A2D009B051E /* AsyncRequestsReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -440,7 +437,6 @@
 				2FC444B41F1A44C2009B051E /* DataService.swift in Sources */,
 				2FC444CD1F1A971A009B051E /* RemoteDataService.swift in Sources */,
 				2FC444B21F1A44B3009B051E /* AppState.swift in Sources */,
-				2FC444C21F1A8A2D009B051E /* AsyncRequestsReducer.swift in Sources */,
 				2FC444C41F1A8AD2009B051E /* SideEffects.swift in Sources */,
 				2FC444C61F1A8B18009B051E /* FetchUsers.swift in Sources */,
 				2FC444D41F1AA804009B051E /* CreateMiddleware.swift in Sources */,

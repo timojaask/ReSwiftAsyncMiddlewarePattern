@@ -7,5 +7,7 @@ func usersReducer(action: Action, state: AppState?) -> [User] {
         return state.users
     }
 
+    print("usersReducer reducer")
+
     return action.users
 }

@@ -2,14 +2,13 @@ import ReSwift
 
 func createPost(dataService: DataService) -> MiddlewareItem {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
-        guard let action = action as? SetCreatePost,
-            case .request(let post) = action.state else { return }
+        guard let action = action as? CreatePost,
+            case .request(let post) = action else { return }
 
-        print("createPost side effect, state is: \(action.state)")
-        print("    post is: \(post)")
+        print("createPost side effect")
 
         dataService.createPost(post: post)
-            .then { dispatch(SetCreatePost(state: .success())) }
-            .catch { dispatch(SetCreatePost(state: .error(error: $0))) }
+            .then { dispatch(CreatePost.success) }
+            .catch { dispatch(CreatePost.failure(error: $0)) }
     }
 }

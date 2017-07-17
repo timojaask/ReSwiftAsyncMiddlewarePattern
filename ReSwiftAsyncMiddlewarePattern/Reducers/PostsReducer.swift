@@ -8,5 +8,7 @@ func postsReducer(action: Action, state: AppState?) -> [Post] {
             return state.posts
     }
 
+    print("postsReducer reducer")
+
     return fetchedPosts
 }
