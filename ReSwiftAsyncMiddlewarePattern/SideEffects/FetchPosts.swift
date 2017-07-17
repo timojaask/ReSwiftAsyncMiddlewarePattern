@@ -2,13 +2,12 @@ import ReSwift
 
 func fetchPosts(dataService: DataService) -> MiddlewareItem {
     return { (action: Action, dispatch: @escaping DispatchFunction) in
-        guard let action = action as? SetFetchPosts,
-            case .request = action.state else { return }
 
-        print("fetchPosts side effect, state is: \(action.state)")
+        guard let action = action as? FetchPosts,
+            case .request = action else { return }
 
         dataService.fetchPosts()
-            .then { dispatch(SetFetchPosts(state: .success(posts: $0))) }
-            .catch { dispatch(SetFetchPosts(state: .error(error: $0))) }
+            .then { dispatch(FetchPosts.success(posts: $0)) }
+            .catch { dispatch(FetchPosts.failure(error: $0)) }
     }
 }
