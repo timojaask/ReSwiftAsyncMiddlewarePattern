@@ -25,7 +25,7 @@ class UsersReducerSpec: QuickSpec {
             it("Leaves state unchanged if action is FetchUsers but not .success") {
                 let initialState = randomUsers()
                 let expectedState = initialState
-                let actualState = usersReducer(action: FetchPosts.request, state: initialState)
+                let actualState = usersReducer(action: FetchUsers.request, state: initialState)
 
                 expect(actualState).to(equal(expectedState))
             }
