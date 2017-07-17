@@ -1,9 +1,45 @@
-//
-//  UserReducerSpec.swift
-//  ReSwiftAsyncMiddlewarePattern
-//
-//  Created by Timo Jääskeläinen on 7/17/17.
-//  Copyright © 2017 timojaask. All rights reserved.
-//
+import Quick
+import Nimble
 
-import Foundation
+class UserReducerSpec: QuickSpec {
+
+    override func spec() {
+        describe("User reducer") {
+
+            it("Instantiates AppState when passed state is nil") {
+                let initialState: [User]? = nil
+                let expectedState: [User] = []
+                let actualState = usersReducer(action: FetchPosts.request, state: initialState)
+
+                expect(actualState).to(equal(expectedState))
+            }
+
+            it("Leaves state unchanged if action is not FetchUsers") {
+                let initialState = randomUsers()
+                let expectedState = initialState
+                let actualState = usersReducer(action: FetchPosts.success(posts: []), state: initialState)
+
+                expect(actualState).to(equal(expectedState))
+            }
+
+            it("Leaves state unchanged if action is FetchUsers but not .success") {
+                let initialState = randomUsers()
+                let expectedState = initialState
+                let actualState = usersReducer(action: FetchPosts.request, state: initialState)
+
+                expect(actualState).to(equal(expectedState))
+            }
+
+            it("Returns new users on FetchUsers.success action") {
+                let newUsers = randomUsers()
+                let fetchUsersSuccessAction = FetchUsers.success(users: newUsers)
+
+                let initialState = randomUsers()
+                let expectedState = newUsers
+                let actualState = usersReducer(action: fetchUsersSuccessAction, state: initialState)
+
+                expect(actualState).to(equal(expectedState))
+            }
+        }
+    }
+}
