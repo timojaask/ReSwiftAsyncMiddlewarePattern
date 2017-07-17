@@ -6,7 +6,7 @@ class UsersReducerSpec: QuickSpec {
     override func spec() {
         describe("Users reducer") {
 
-            it("Instantiates AppState when passed state is nil") {
+            it("Instantiates [User] state when passed state is nil") {
                 let initialState: [User]? = nil
                 let expectedState: [User] = []
                 let actualState = usersReducer(action: FetchPosts.request, state: initialState)
