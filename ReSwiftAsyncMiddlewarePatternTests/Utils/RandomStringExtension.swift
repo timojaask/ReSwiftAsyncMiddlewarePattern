@@ -1,4 +1,5 @@
 import Foundation
+@testable import ReSwiftAsyncMiddlewarePattern
 
 extension String {
     static func random(length: Int) -> String {

@@ -1,3 +1,5 @@
+@testable import ReSwiftAsyncMiddlewarePattern
+
 func randomUsers(_ number: Int = 4) -> [User] {
     return (0..<number).map { _ in
         User(firstName: String.random(length: 5), lastName: String.random(length: 5))

@@ -29,22 +29,6 @@
 		2FC99F251F1CDE71002BCC98 /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */; };
 		2FC99F261F1CDE71002BCC98 /* InjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F231F1CDE71002BCC98 /* InjectService.swift */; };
 		2FC99F271F1CDE71002BCC98 /* MiddlewareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */; };
-		2FC99F281F1CEEFA002BCC98 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B11F1A44B3009B051E /* AppState.swift */; };
-		2FC99F291F1CEEFE002BCC98 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444AD1F1A4495009B051E /* Actions.swift */; };
-		2FC99F2A1F1CEF00002BCC98 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444AF1F1A44A5009B051E /* AppReducer.swift */; };
-		2FC99F2B1F1CEF03002BCC98 /* UsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BD1F1A89F2009B051E /* UsersReducer.swift */; };
-		2FC99F2C1F1CEF05002BCC98 /* PostsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BF1F1A8A0C009B051E /* PostsReducer.swift */; };
-		2FC99F2D1F1CEF08002BCC98 /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C31F1A8AD2009B051E /* SideEffects.swift */; };
-		2FC99F2E1F1CEF0A002BCC98 /* FetchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C51F1A8B18009B051E /* FetchUsers.swift */; };
-		2FC99F2F1F1CEF0C002BCC98 /* FetchPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C71F1A8FA5009B051E /* FetchPosts.swift */; };
-		2FC99F301F1CEF0E002BCC98 /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444C91F1A9052009B051E /* CreatePost.swift */; };
-		2FC99F311F1CEF12002BCC98 /* CreateMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F221F1CDE71002BCC98 /* CreateMiddleware.swift */; };
-		2FC99F321F1CEF15002BCC98 /* InjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F231F1CDE71002BCC98 /* InjectService.swift */; };
-		2FC99F331F1CEF18002BCC98 /* MiddlewareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F241F1CDE71002BCC98 /* MiddlewareItem.swift */; };
-		2FC99F341F1CEF1C002BCC98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B91F1A45CC009B051E /* User.swift */; };
-		2FC99F351F1CEF1E002BCC98 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444BB1F1A45F1009B051E /* Post.swift */; };
-		2FC99F361F1CEF21002BCC98 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444B31F1A44C2009B051E /* DataService.swift */; };
-		2FC99F371F1CEF25002BCC98 /* RemoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444CC1F1A971A009B051E /* RemoteDataService.swift */; };
 		2FC99F3A1F1D0A3F002BCC98 /* EquatableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F391F1D0A3F002BCC98 /* EquatableExtensions.swift */; };
 		2FC99F3C1F1D0A5E002BCC98 /* RandomStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F3B1F1D0A5E002BCC98 /* RandomStringExtension.swift */; };
 		2FC99F3E1F1D0A7C002BCC98 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F3D1F1D0A7C002BCC98 /* TestData.swift */; };
@@ -506,30 +490,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC99F291F1CEEFE002BCC98 /* Actions.swift in Sources */,
 				2FC99F421F1D3F71002BCC98 /* PostsReducerSpec.swift in Sources */,
-				2FC99F311F1CEF12002BCC98 /* CreateMiddleware.swift in Sources */,
 				2FC444A31F1A438A009B051E /* AppReducerSpec.swift in Sources */,
 				2FC99F3E1F1D0A7C002BCC98 /* TestData.swift in Sources */,
-				2FC99F2D1F1CEF08002BCC98 /* SideEffects.swift in Sources */,
 				2FC99F441F1D45F2002BCC98 /* FetchUsersSpec.swift in Sources */,
 				2FC99F401F1D34DB002BCC98 /* UsersReducerSpec.swift in Sources */,
-				2FC99F301F1CEF0E002BCC98 /* CreatePost.swift in Sources */,
-				2FC99F2F1F1CEF0C002BCC98 /* FetchPosts.swift in Sources */,
-				2FC99F341F1CEF1C002BCC98 /* User.swift in Sources */,
-				2FC99F361F1CEF21002BCC98 /* DataService.swift in Sources */,
-				2FC99F2A1F1CEF00002BCC98 /* AppReducer.swift in Sources */,
-				2FC99F331F1CEF18002BCC98 /* MiddlewareItem.swift in Sources */,
 				2FC99F3C1F1D0A5E002BCC98 /* RandomStringExtension.swift in Sources */,
-				2FC99F351F1CEF1E002BCC98 /* Post.swift in Sources */,
-				2FC99F281F1CEEFA002BCC98 /* AppState.swift in Sources */,
-				2FC99F321F1CEF15002BCC98 /* InjectService.swift in Sources */,
-				2FC99F371F1CEF25002BCC98 /* RemoteDataService.swift in Sources */,
 				2FC99F461F1D8794002BCC98 /* TestDataService.swift in Sources */,
 				2FC99F3A1F1D0A3F002BCC98 /* EquatableExtensions.swift in Sources */,
-				2FC99F2C1F1CEF05002BCC98 /* PostsReducer.swift in Sources */,
-				2FC99F2B1F1CEF03002BCC98 /* UsersReducer.swift in Sources */,
-				2FC99F2E1F1CEF0A002BCC98 /* FetchUsers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

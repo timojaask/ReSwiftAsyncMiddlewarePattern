@@ -1,5 +1,7 @@
 import Quick
 import Nimble
+import ReSwift
+@testable import ReSwiftAsyncMiddlewarePattern
 
 class FetchUsersSpec: QuickSpec {
 

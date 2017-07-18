@@ -1,4 +1,5 @@
 import PromiseKit
+@testable import ReSwiftAsyncMiddlewarePattern
 
 enum TestDataServiceError: Error {
     case someError
