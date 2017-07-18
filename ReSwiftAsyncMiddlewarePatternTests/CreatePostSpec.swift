@@ -9,37 +9,23 @@ class CreatePostSpec: QuickSpec {
         describe("createPost") {
 
             it("Does not call createPost service when action is not CreatePost") {
-                let testDataService = TestDataService(
-                    posts: [],
-                    users: [],
-                    shouldFail: false,
-                    fetchUsersCallback: nil,
-                    fetchPostsCallback: nil,
-                    createPostCallback: {
-                        fail("The test was not supposed to call createPost DataService method")
-                    }
-                )
+                let testDataService = TestDataService(createPostCallback: {
+                    fail("The test was not supposed to call createPost DataService method")
+                })
                 let middlewareItem = createPost(dataService: testDataService)
                 middlewareItem(FetchPosts.request) { _ in }
             }
 
             it("Does not call createPost service when action is CreatePost and type is not request") {
-                let testDataService = TestDataService(
-                    posts: [],
-                    users: [],
-                    shouldFail: false,
-                    fetchUsersCallback: nil,
-                    fetchPostsCallback: nil,
-                    createPostCallback: {
-                        fail("The test was not supposed to call createPost DataService method")
-                    }
-                )
+                let testDataService = TestDataService(createPostCallback: {
+                    fail("The test was not supposed to call createPost DataService method")
+                })
                 let middlewareItem = createPost(dataService: testDataService)
                 middlewareItem(CreatePost.success) { _ in }
             }
 
             it("Dispatches CreatePost.success action after CreatePost.request is passed") {
-                let testDataService = TestDataService(posts: [], users: [], shouldFail: false, fetchUsersCallback: nil, fetchPostsCallback: nil, createPostCallback: nil)
+                let testDataService = TestDataService(posts: [], users: [])
                 let middlewareItem = createPost(dataService: testDataService)
                 let newPost = randomPost()
 
@@ -56,7 +42,7 @@ class CreatePostSpec: QuickSpec {
             }
 
             it("Dispatches CreatePost.error action if error occurs") {
-                let testDataService = TestDataService(posts: [], users: [], shouldFail: true, fetchUsersCallback: nil, fetchPostsCallback: nil, createPostCallback: nil)
+                let testDataService = TestDataService(shouldFail: true)
                 let middlewareItem = createPost(dataService: testDataService)
                 let newPost = randomPost()
 
