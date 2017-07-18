@@ -11,6 +11,7 @@ struct TestDataService: DataService {
     let shouldFail: Bool
     let fetchUsersCallback: (() -> Void)?
     let fetchPostsCallback: (() -> Void)?
+    let createPostCallback: (() -> Void)?
 
     func fetchPosts() -> Promise<[Post]> {
         self.fetchPostsCallback?()
@@ -23,6 +24,7 @@ struct TestDataService: DataService {
     }
 
     func createPost(post: Post) -> Promise<Void> {
+        self.createPostCallback?()
         return promise(shouldFail: self.shouldFail) { $0() }
     }
 
