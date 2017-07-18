@@ -9,24 +9,36 @@ class FetchUsersSpec: QuickSpec {
         describe("fetchUsers") {
 
             it("Does not call fetchUsers service when action is not FetchUsers") {
-                let testDataService = TestDataService(posts: [], users: [], shouldFail: false) {
-                    fail("The test was not supposed to call fetchUsers DataService method")
-                }
+                let testDataService = TestDataService(
+                    posts: [],
+                    users: [],
+                    shouldFail: false,
+                    fetchUsersCallback: {
+                        fail("The test was not supposed to call fetchUsers DataService method")
+                    },
+                    fetchPostsCallback: nil
+                )
                 let middlewareItem = fetchUsers(dataService: testDataService)
                 middlewareItem(FetchPosts.request) { _ in }
             }
 
             it("Does not call fetchUsers service when action is FetchUsers and type is not request") {
-                let testDataService = TestDataService(posts: [], users: [], shouldFail: false) {
-                    fail("The test was not supposed to call fetchUsers DataService method")
-                }
+                let testDataService = TestDataService(
+                    posts: [],
+                    users: [],
+                    shouldFail: false,
+                    fetchUsersCallback: {
+                        fail("The test was not supposed to call fetchUsers DataService method")
+                    },
+                    fetchPostsCallback: nil
+                )
                 let middlewareItem = fetchUsers(dataService: testDataService)
                 middlewareItem(FetchUsers.success(users: [])) { _ in }
             }
 
             it("Dispatches FetchUsers.success action with correct users after FetchUsers.request is passed") {
                 let expected = randomUsers()
-                let testDataService = TestDataService(posts: [], users: expected, shouldFail: false, fetchUsersCallback: nil)
+                let testDataService = TestDataService(posts: [], users: expected, shouldFail: false, fetchUsersCallback: nil, fetchPostsCallback: nil)
                 let middlewareItem = fetchUsers(dataService: testDataService)
 
                 var actual: [User] = []
@@ -42,7 +54,7 @@ class FetchUsersSpec: QuickSpec {
             }
 
             it("Dispatches FetchUsers.error action if error occurs") {
-                let testDataService = TestDataService(posts: [], users: [], shouldFail: true, fetchUsersCallback: nil)
+                let testDataService = TestDataService(posts: [], users: [], shouldFail: true, fetchUsersCallback: nil, fetchPostsCallback: nil)
                 let middlewareItem = fetchUsers(dataService: testDataService)
 
                 let expected = TestDataServiceError.someError

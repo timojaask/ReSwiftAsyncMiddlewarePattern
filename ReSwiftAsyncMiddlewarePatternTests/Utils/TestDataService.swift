@@ -10,15 +10,15 @@ struct TestDataService: DataService {
     let users: [User]
     let shouldFail: Bool
     let fetchUsersCallback: (() -> Void)?
+    let fetchPostsCallback: (() -> Void)?
 
     func fetchPosts() -> Promise<[Post]> {
+        self.fetchPostsCallback?()
         return promise(shouldFail: self.shouldFail) { $0(self.posts) }
     }
 
     func fetchUsers() -> Promise<[User]> {
-        if let fetchUsersCallback = self.fetchUsersCallback {
-            fetchUsersCallback()
-        }
+        self.fetchUsersCallback?()
         return promise(shouldFail: self.shouldFail) { $0(self.users) }
     }
 
