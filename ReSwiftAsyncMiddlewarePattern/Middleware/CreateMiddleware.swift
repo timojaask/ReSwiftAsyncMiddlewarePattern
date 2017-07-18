@@ -1,6 +1,6 @@
 import ReSwift
 
-func createMiddleware(items: [MiddlewareItem]) -> Middleware<Any> {
+func createMiddleware(items: [MiddlewareItem]) -> Middleware<AppState> {
     return { dispatch, getState in
         return { next in
             return { action in
