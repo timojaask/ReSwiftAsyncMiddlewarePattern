@@ -71,3 +71,35 @@ let sideEffects = [
 let middleware = createMiddleware(items: sideEffects)
 let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [middleware])
 ```
+
+Now your actions that perform an asynchronous operation can be simple enums:
+
+```swift
+enum FetchUsers: Action {
+    case request
+    case success(users: [User])
+    case failure(error: Error)
+}
+```
+
+And your reducers simple pure functions:
+
+```swift
+func appReducer(action: Action, state: AppState?) -> AppState {
+    return AppState(
+        users: usersReducer(action: action, state: state?.users),
+        posts: postsReducer(action: action, state: state?.posts)
+    )
+}
+
+func usersReducer(action: Action, state: [User]?) -> [User] {
+    let state = state ?? []
+
+    guard let action = action as? FetchUsers,
+        case .success(let fetchedUsers) = action else {
+            return state
+    }
+
+    return fetchedUsers
+}
+```
