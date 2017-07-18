@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3F3C681F1E2AFD0048C501 /* CreateMiddlewareSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C671F1E2AFD0048C501 /* CreateMiddlewareSpec.swift */; };
 		2FC4448E1F1A438A009B051E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4448D1F1A438A009B051E /* AppDelegate.swift */; };
 		2FC444901F1A438A009B051E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4448F1F1A438A009B051E /* ViewController.swift */; };
 		2FC444951F1A438A009B051E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC444941F1A438A009B051E /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		204407718DD5BFB38DF3686B /* Pods_ReSwiftAsyncMiddlewarePatternTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftAsyncMiddlewarePatternTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3F3C671F1E2AFD0048C501 /* CreateMiddlewareSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMiddlewareSpec.swift; sourceTree = "<group>"; };
 		2FC4448A1F1A438A009B051E /* ReSwiftAsyncMiddlewarePattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftAsyncMiddlewarePattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC4448D1F1A438A009B051E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FC4448F1F1A438A009B051E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				2FC99F431F1D45F2002BCC98 /* FetchUsersSpec.swift */,
 				2FC99F471F1D87FB002BCC98 /* FetchPostsSpec.swift */,
 				2FC99F491F1D99AB002BCC98 /* CreatePostSpec.swift */,
+				2F3F3C671F1E2AFD0048C501 /* CreateMiddlewareSpec.swift */,
 				2FC99F381F1D0A18002BCC98 /* Utils */,
 				2FC444A41F1A438A009B051E /* Info.plist */,
 			);
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3F3C681F1E2AFD0048C501 /* CreateMiddlewareSpec.swift in Sources */,
 				2FC99F421F1D3F71002BCC98 /* PostsReducerSpec.swift in Sources */,
 				2FC444A31F1A438A009B051E /* AppReducerSpec.swift in Sources */,
 				2FC99F3E1F1D0A7C002BCC98 /* TestData.swift in Sources */,
