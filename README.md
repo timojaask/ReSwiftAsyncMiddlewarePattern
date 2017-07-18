@@ -20,10 +20,34 @@ func fetchGitHubRepositories(state: State, store: Store<State>) -> Action? {
 }
 ```
 
-This makes it difficult to test action creators, as it is not clear how to replace `Octokit` object with a test stub.
+This makes it difficult to test action creators, as it is not clear how to replace `Octokit` object with a test stub. You could inject dependencies by wrapping action creators in a function that provides the required service, however then it would still feel like the action is doing too many things. It would be preferable for an `Action` to have only one purpose - describing an action. So ideally we want to call third party services somewhere outside of our actions and reducers.
 
 ## Solution
-Instead of firing asynchronous operations from within action creators, we can use a ReSwift middleware, whose only job will be doing any side effects:
+Instead of firing asynchronous operations from within action creators, we can use a ReSwift middleware, whose only job will be handling side effects:
+
+```swift
+// SideEffects/fetchUsers.swift
+func fetchUsers(action: Action, dispatch: @escaping DispatchFunction) {
+    guard let action = action as? FetchUsers,
+        case .request = action else { return }
+
+    let dataService = RemoteDataService()
+    dataService.fetchUsers()
+        .then { dispatch(FetchUsers.success(users: $0)) }
+        .catch { dispatch(FetchUsers.failure(error: $0)) }
+}
+
+// AppDelegate.swift
+let sideEffects = [
+    fetchUsers,
+    fetchPosts,
+    createPost
+]
+let middleware = createMiddleware(items: sideEffects)
+let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [middleware])
+```
+
+In order to make it testable, we can wrap it in a function that provides the dependency:
 
 ```swift
 // SideEffects/fetchUsers.swift
@@ -42,6 +66,7 @@ func fetchUsers(dataService: DataService) -> MiddlewareItem {
 let sideEffects = [
     fetchUsers(RemoteDataService()),
     fetchPosts(RemoteDataService()),
+    createPost(RemoteDataService()),
 ]
 let middleware = createMiddleware(items: sideEffects)
 let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [middleware])
