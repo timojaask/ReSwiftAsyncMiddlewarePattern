@@ -3,6 +3,8 @@ Example of writing fully unit testable asynchronous requests using [ReSwift](htt
 
 *In this context "side effect" means any call to an external service, be it Alamofire, UserDefaults or UIKit.*
 
+While this is an example project with bare minimum code, you can also see a full real-life app that was built using this pattern: https://github.com/timojaask/AwesomeQuotesReSwift
+
 ## Project
 This demo project consists of ReSwift reducers, actions as well as asynchronous action handlers in a form of ReSwift middleware. It includes tests for all of the core app functionality.
 
